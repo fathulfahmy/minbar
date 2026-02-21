@@ -1,0 +1,105 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+:root {
+  --text-size: 10px;
+  --icon-size: 10px;
+
+  --text-color: white;
+  --icon-color: white;
+
+  --bar-background-color: black;
+  --workspace-background-color: #2563eb;
+  --mode-background-color: #dc2626;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: var(--text-size);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+i {
+  margin-right: 7px;
+  font-size: var(--icon-size);
+  color: var(--icon-color);
+}
+
+div,
+span,
+p {
+  cursor: default;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  border-bottom: 0;
+  background: var(--bar-background-color);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.2vw;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  justify-self: end;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: rgb(255 255 255 / 5%);
+  margin-right: 4px;
+  padding: 4px 8px;
+  color: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+
+  &.displayed {
+    background: rgb(255 255 255 / 15%);
+  }
+
+  &.focused,
+  &:hover {
+    background: var(--workspace-background-color);
+  }
+}
+
+.binding-mode,
+.tiling-direction,
+.paused-button {
+  background: rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 90%);
+  border-radius: 0;
+  line-height: 1;
+  margin-right: 4px;
+  padding: 4px 8px;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.binding-mode,
+.paused-button {
+  background: var(--mode-background-color);
+}
